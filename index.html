@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/script.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <ol>
+            <li onclick="getData(this);" data-cityId="2172797" id="Bryansk">Брянск</li>
+            <li onclick="getData(this);" data-cityId="5601538" id="Moscow">Москва</li>
+            <li onclick="getData(this);" data-cityId="484907" id="Taganrog">Таганрог</li>
+            <li onclick="getData(this);" data-cityId="2643743" id="London">Лондон</li>
+            <li onclick="getData(this);" data-cityId="498817" id="Saint-Petersburg">Санкт-Петербург</li>
+        </ol>
+    </header>
+    <div id="weather">
+        <div id="cityName">Брянск</div>
+        <img id="weatherImage" src="http://openweathermap.org/img/wn/10d@2x.png" alt="иконка, обозначающая состояние погоды">
+        
+        <p id="degrees">0 C&deg;</p>
+        <div id="weatherTextData">            
+            <p id="pressure">Давление: 0 мм.рт.ст.</p>
+            <p id="windSpeed">Скорость ветра: 0 м/с</p>
+            <p id="humidity">Влажность: 0%</p>            
+        </div>
+        <div id="update" onclick="update();">Обновить данные о погоде</div>
+    </div>
+    <!-- <p>Какой то текст</p>
+    <form action="" onsubmit="Ajax(); return false;">
+        <input type="number" name="cityId" id="cityId">
+        <input type="submit" value="Нажми на меня!">
+    </form>
+    <p id="weatherData">
+
+    </p> -->
+</body>
+
+</html>
