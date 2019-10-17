@@ -2,7 +2,7 @@ let API_KEY = "82fd885dfd1aa9272b2bf203794d14a3";
 let weatherData;
 let currentCityId = 2172797;
 let currentCityName = "Брянск"
-function loadInCache(key, value) {
+function loadInCache(key, value) {    
     localStorage.setItem(key, value);
 }
 function getCache(key) {
@@ -37,8 +37,8 @@ function LoadData(cityId)
         }
     }
 }
-function fillData() {
-    let weatherDataObject = JSON.parse(weatherData);
+function fillData() {    
+    let weatherDataObject = JSON.parse(weatherData);        
     document.getElementById("pressure").innerText = "Давление: " + parseInt(weatherDataObject["main"]["pressure"]) + " мм.рт.ст.";
     document.getElementById("degrees").innerHTML = parseInt(weatherDataObject["main"]["temp"]) + " C&deg;";
     document.getElementById("windSpeed").innerHTML = "Скорость ветра: " + parseInt(weatherDataObject["wind"]["speed"]) + " м/с";
@@ -46,14 +46,14 @@ function fillData() {
     document.getElementById("weatherImage").setAttribute("src", "http://openweathermap.org/img/wn/" + weatherDataObject["weather"][0]["icon"] + "@2x.png")
     document.getElementById("cityName").innerHTML = currentCityName;
 }
-function getData(object) {
-
+function getData(object) {    
     let cityId = parseInt(object.getAttribute("data-cityId"));
     currentCityName = object.innerText;
     currentCityId = cityId;
     weatherData = getCache(cityId);
     if (weatherData == "null" || weatherData == null) {
         GetWeatherData(cityId);        
+
     }
     else {
         fillData();
@@ -62,6 +62,7 @@ function getData(object) {
 
 function GetWeatherData(cityId) {
     let xmlHttpRequest = new XMLHttpRequest();
+    
     xmlHttpRequest.open("GET", "https://api.openweathermap.org/data/2.5/weather?id=" + cityId + "&APPID=" + API_KEY + "&units=metric");
     xmlHttpRequest.send();
     xmlHttpRequest.onreadystatechange = function () {
