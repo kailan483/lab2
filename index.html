@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <ol>
+        <ol>        
             <li onclick="getData(this);" data-cityId="2172797" id="Bryansk">Брянск</li>
             <li onclick="getData(this);" data-cityId="5601538" id="Moscow">Москва</li>
             <li onclick="getData(this);" data-cityId="484907" id="Taganrog">Таганрог</li>
@@ -23,8 +23,7 @@
     </header>
     <div id="weather">
         <div id="cityName">Брянск</div>
-        <img id="weatherImage" src="http://openweathermap.org/img/wn/10d@2x.png" alt="иконка, обозначающая состояние погоды">
-        
+        <img id="weatherImage" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Иконка, обозначающая состояние погоды">        
         <p id="degrees">0 C&deg;</p>
         <div id="weatherTextData">            
             <p id="pressure">Давление: 0 мм.рт.ст.</p>
@@ -32,15 +31,7 @@
             <p id="humidity">Влажность: 0%</p>            
         </div>
         <div id="update" onclick="update();">Обновить данные о погоде</div>
-    </div>
-    <!-- <p>Какой то текст</p>
-    <form action="" onsubmit="Ajax(); return false;">
-        <input type="number" name="cityId" id="cityId">
-        <input type="submit" value="Нажми на меня!">
-    </form>
-    <p id="weatherData">
-
-    </p> -->
+    </div>    
 </body>
 
 </html>

@@ -43,7 +43,7 @@ function fillData() {
     document.getElementById("degrees").innerHTML = parseInt(weatherDataObject["main"]["temp"]) + " C&deg;";
     document.getElementById("windSpeed").innerHTML = "Скорость ветра: " + parseInt(weatherDataObject["wind"]["speed"]) + " м/с";
     document.getElementById("humidity").innerHTML = "Влажность: " + weatherDataObject["main"]["humidity"] + "%";    
-    document.getElementById("weatherImage").setAttribute("src", "http://openweathermap.org/img/wn/" + weatherDataObject["weather"][0]["icon"] + "@2x.png")
+    document.getElementById("weatherImage").setAttribute("src", "http://openweathermap.org/img/wn/" + weatherDataObject.weather[0].icon + "@2x.png")
     document.getElementById("cityName").innerHTML = currentCityName;
 }
 function getData(object) {    
@@ -53,7 +53,6 @@ function getData(object) {
     weatherData = getCache(cityId);
     if (weatherData == "null" || weatherData == null) {
         GetWeatherData(cityId);        
-
     }
     else {
         fillData();
@@ -61,8 +60,7 @@ function getData(object) {
 }
 
 function GetWeatherData(cityId) {
-    let xmlHttpRequest = new XMLHttpRequest();
-    
+    let xmlHttpRequest = new XMLHttpRequest();    
     xmlHttpRequest.open("GET", "https://api.openweathermap.org/data/2.5/weather?id=" + cityId + "&APPID=" + API_KEY + "&units=metric");
     xmlHttpRequest.send();
     xmlHttpRequest.onreadystatechange = function () {
